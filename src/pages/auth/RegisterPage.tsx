@@ -9,20 +9,28 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await register(form);
-      navigate('/set-pin');
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Gagal mendaftar');
-    }
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setError('');
+
+  // Validasi format email
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(form.email)) {
+    setError('Format email tidak valid. Contoh: nama@gmail.com');
+    return;
+  }
+
+  try {
+    await register(form);
+    navigate('/set-pin');
+  } catch (err: any) {
+    setError(err.response?.data?.message || 'Gagal mendaftar');
+  }
+};
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="h-12 bg-gray-100 flex items-center justify-center text-xs text-red-500">Safe area</div>
+      
       <div className="px-6 py-8 max-w-sm mx-auto">
         <h1 className="text-2xl font-bold mb-6">Daftar</h1>
         {error && <p className="text-red-500 text-sm mb-3">{error}</p>}

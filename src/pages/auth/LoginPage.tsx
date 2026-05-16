@@ -11,19 +11,27 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      const user = await login(email, password);
-      navigate(user.role === 'super_admin' ? '/admin' : '/user');
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Gagal login');
-    }
-  };
+  e.preventDefault();
+  setError('');
+
+  // Validasi format email
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(email)) {
+    setError('Format email tidak valid. Contoh: nama@gmail.com');
+    return;
+  }
+
+  try {
+    const user = await login(email, password);
+    navigate(user.role === 'super_admin' ? '/admin' : '/user');
+  } catch (err: any) {
+    setError(err.response?.data?.message || 'Gagal login');
+  }
+};
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <div className="h-12 bg-gray-100 flex items-center justify-center text-xs text-red-500">Safe area</div>
+      
       <div className="flex-1 flex flex-col items-center justify-center px-6">
         <h1 className="text-3xl font-bold mb-8">PAYLO</h1>
         {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
