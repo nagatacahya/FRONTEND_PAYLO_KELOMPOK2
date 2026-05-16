@@ -53,7 +53,7 @@ const DashboardAdminPage = () => {
         <Link to="/admin/umkm" className="relative group overflow-hidden bg-gradient-to-br from-amber-600/20 to-orange-600/20 border border-amber-400/30 backdrop-blur-md rounded-xl p-6 shadow-lg text-center font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:border-amber-400/60 hover:shadow-[0_0_25px_rgba(245,158,11,0.3)]">
           <div className="flex flex-col items-center gap-1">
           <span className="text-2xl tracking-wide">Kelola UMKM</span>
-          <span className="text-sm font-normal text-amber-200/80 group-hover:text-white transition-colors">Manajemen data mitra & verifikasi toko UMKM</span>
+          <span className="text-sm font-normal text-amber-200/80 group-hover:text-white transition-colors">Manajemen data mitra UMKM</span>
           </div>
         </Link>
         <Link to="/admin/edukasi" className="relative group overflow-hidden bg-gradient-to-br from-indigo-600/20 to-violet-600/20 border border-indigo-400/30 backdrop-blur-md rounded-xl p-6 shadow-lg text-center font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:border-indigo-400/60 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)]">
@@ -65,7 +65,7 @@ const DashboardAdminPage = () => {
         <Link to="/admin/pengaturan" className="relative group overflow-hidden bg-gradient-to-br from-cyan-600/20 to-blue-600/20 border border-cyan-400/30 backdrop-blur-md rounded-xl p-6 shadow-lg text-center font-semibold text-white transition-all duration-300 hover:scale-[1.03] hover:border-cyan-400/60 hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]">
           <div className="flex flex-col items-center gap-1">
           <span className="text-2xl tracking-wide">Pengaturan Sistem</span>
-          <span className="text-sm font-normal text-slate-300/80 group-hover:text-white transition-colors">Konfigurasi aplikasi, fitur, & batasan sistem</span>
+          <span className="text-sm font-normal text-slate-300/80 group-hover:text-white transition-colors">Konfigurasi nilai transaksi</span>
           </div>
         </Link>
         <button onClick={logout} className="bg-red-400 rounded-xl p-6 shadow-lg text-center font-semibold text-lg text-white hover:bg-red-500">
