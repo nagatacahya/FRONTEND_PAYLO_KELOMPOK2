@@ -41,33 +41,32 @@ const FormEdukasiPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-blue-600 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100 flex flex-col items-center justify-center antialiased">
       <div className="flex items-center gap-4 mb-8">
-        <BackButton to="/admin/edukasi" />
         <h1 className="text-4xl font-bold text-white">{isEdit ? 'Edit Edukasi' : 'Tambah Edukasi'}</h1>
       </div>
-      <div className="bg-white rounded-2xl p-8 max-w-2xl">
+      <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl  p-6 shadow-2xl rounded-2xl">
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
-            className="border rounded-lg p-3 w-full"
+            className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
             placeholder="Judul"
             value={judul}
             onChange={e => setJudul(e.target.value)}
             required
           />
           <textarea
-            className="border rounded-lg p-3 w-full h-48"
+            className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
             placeholder="Isi Edukasi"
             value={isi}
             onChange={e => setIsi(e.target.value)}
             required
           />
           <div className="flex gap-4">
-            <button type="submit" className="bg-[#08F] text-white px-8 py-3 rounded-full font-semibold">
-              Simpan
+            <button type= "submit" className="bg-[#08F] hover:bg-blue-600 active:scale-95 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/20 transition-all duration-200"> 
+              Simpan 
             </button>
-            <button type="button" onClick={() => navigate('/admin/edukasi')} className="border border-gray-300 px-8 py-3 rounded-full font-semibold">
-              Batal
+            <button type= "button" onClick={() => navigate('/admin/edukasi')} className="border border-white/20 text-slate-200 bg-transparent px-8 py-3 rounded-full font-semibold transition-all duration-200 hover:border-red-500 hover:text-red-400 hover:bg-red-500/10 active:scale-95">
+               Batal 
             </button>
           </div>
         </form>

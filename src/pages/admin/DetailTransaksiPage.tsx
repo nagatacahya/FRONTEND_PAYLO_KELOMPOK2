@@ -27,12 +27,12 @@ const DetailTransaksiPage = () => {
   if (!data) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-blue-600 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100">
       <div className="flex items-center gap-4 mb-8">
         <BackButton to="/admin/transaksi" />
         <h1 className="text-4xl font-bold text-white">Detail Transaksi</h1>
       </div>
-      <div className="bg-white rounded-2xl p-8 max-w-2xl space-y-4">
+      <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl  p-6 shadow-2xl rounded-2xl p-8 max-w-2xl space-y-4">
         <div className="flex justify-between border-b pb-2">
           <span className="font-semibold">ID Transaksi</span>
           <span>{data.id_transaksi}</span>

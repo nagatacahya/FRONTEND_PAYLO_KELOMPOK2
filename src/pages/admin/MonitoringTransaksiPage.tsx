@@ -24,12 +24,14 @@ const MonitoringTransaksiPage = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-blue-600 p-8">
-      <div className="flex items-center gap-4 mb-8">
-        <BackButton to="/admin" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100">
+      <div className="relative flex items-center justify-center mb-8 w-full">
+          <div className="absolute left-0">
+          <BackButton to="/admin" />
+          </div>
         <h1 className="text-4xl font-bold text-white">Monitoring Transaksi</h1>
       </div>
-      <div className="bg-white rounded-2xl p-6">
+      <div className="bg-slate-950/40 border border-brown/10 backdrop-blur-xl rounded-2xl p-6 shadow-2xl">
         <table className="w-full text-left">
           <thead className="border-b">
             <tr className="text-lg">

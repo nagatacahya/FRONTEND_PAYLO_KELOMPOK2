@@ -38,13 +38,13 @@ const KelolaUserPage = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-blue-600 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100">
       <div className="flex items-center justify-between mb-8">
+        <BackButton to="/admin" />
         <h1 className="text-4xl font-bold text-white">Kelola User</h1>
         <Link to="/admin/users/tambah" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full">+ User</Link>
-        <BackButton to="/admin" />
       </div>
-      <div className="bg-white rounded-2xl p-6">
+      <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-2xl">
         <table className="w-full text-left">
           <thead className="border-b">
             <tr className="text-lg">
@@ -58,7 +58,7 @@ const KelolaUserPage = () => {
               <tr key={user.id_user} className="border-b">
                 <td className="py-3">{user.nama}</td>
                 <td>{user.email}</td>
-                <td className="flex gap-3">
+                <td className="flex gap-2 items-center py-4 px-1">
                   <Link to={`/admin/users/edit/${user.id_user}`} className="text-blue-500"><i className="fa-solid fa-pen" /></Link>
                   <button onClick={() => hapusUser(user.id_user)} className="text-red-500"><i className="fa-solid fa-trash" /></button>
                 </td>

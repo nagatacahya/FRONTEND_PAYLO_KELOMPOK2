@@ -39,13 +39,13 @@ const KelolaEdukasiPage = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 to-blue-600 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100">
       <div className="flex items-center justify-between mb-8">
+        <BackButton to="/admin" />
         <h1 className="text-4xl font-bold text-white">Kelola Edukasi</h1>
         <Link to="/admin/edukasi/tambah" className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-full">+ Edukasi</Link>
-        <BackButton to="/admin" />
       </div>
-      <div className="bg-white rounded-2xl p-6">
+      <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl  p-6 shadow-2xl rounded-2xl">
         <table className="w-full text-left">
           <thead className="border-b">
             <tr className="text-lg">
