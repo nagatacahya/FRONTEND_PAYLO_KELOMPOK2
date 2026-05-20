@@ -37,24 +37,76 @@ const FormUserPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-zinc-900 p-8 text-slate-100 flex flex-col items-center justify-center antialiased">
-      <div className="flex items-center gap-4 mb-8">
-        <h1 className="text-4xl font-bold text-white">{isEdit ? 'Edit User' : 'Tambah User'}</h1>
-      </div>
-      <div className="bg-slate-950/40 border border-white/10 backdrop-blur-xl  p-6 shadow-2xl rounded-2xl p-8 max-w-2xl">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="Nama" value={form.nama} onChange={e => setForm({...form, nama: e.target.value})} required />
-          <input className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="Email" type="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})} required />
-          <input className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="No HP" value={form.no_hp} onChange={e => setForm({...form, no_hp: e.target.value})} required />
-          <input className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="Alamat" value={form.alamat} onChange={e => setForm({...form, alamat: e.target.value})} />
-          {!isEdit && <input className="bg-slate-900/60 border border-white/10 rounded-lg p-3 w-full text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all" placeholder="Password" type="password" value={form.password} onChange={e => setForm({...form, password: e.target.value})} required />}
-          <div className="flex gap-4">
-            <button type="submit" className="bg-[#08F] hover:bg-blue-600 active:scale-95 text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-blue-500/20 transition-all"> Simpan </button>
-            <button type="button" onClick={() => navigate('/admin/users')} className="border border-white/20 text-slate-200 bg-transparent px-8 py-3 rounded-full font-semibold transition-all duration-200 hover:border-red-500 hover:text-red-400 hover:bg-red-500/10 active:scale-95"> Batal </button>
+    <div className="min-h-screen bg-gradient-to-br from-slate-200 via-blue-100/30 to-slate-200 p-8 flex flex-col items-center justify-center antialiased">
+      <div className="w-full max-w-2xl">
+        <div className="flex items-center justify-center mb-8">
+          <h1 className="text-4xl font-bold text-slate-700">{isEdit ? 'Edit User' : 'Tambah User'}</h1>
+        </div>
+        
+        <div className="bg-white/90 backdrop-blur-sm border border-slate-200 shadow-sm rounded-2xl p-8">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input 
+              className="bg-white border border-slate-200 rounded-lg p-3 w-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition-all" 
+              placeholder="Nama" 
+              value={form.nama} 
+              onChange={e => setForm({...form, nama: e.target.value})} 
+              required 
+            />
+            <input 
+              className="bg-white border border-slate-200 rounded-lg p-3 w-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition-all" 
+              placeholder="Email" 
+              type="email" 
+              value={form.email} 
+              onChange={e => setForm({...form, email: e.target.value})} 
+              required 
+            />
+            <input 
+              className="bg-white border border-slate-200 rounded-lg p-3 w-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition-all" 
+              placeholder="No HP" 
+              value={form.no_hp} 
+              onChange={e => setForm({...form, no_hp: e.target.value})} 
+              required 
+            />
+            <input 
+              className="bg-white border border-slate-200 rounded-lg p-3 w-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition-all" 
+              placeholder="Alamat" 
+              value={form.alamat} 
+              onChange={e => setForm({...form, alamat: e.target.value})} 
+            />
+            {!isEdit && (
+              <input 
+                className="bg-white border border-slate-200 rounded-lg p-3 w-full text-slate-700 placeholder-slate-400 focus:outline-none focus:border-blue-300 focus:ring-2 focus:ring-blue-100 transition-all" 
+                placeholder="Password" 
+                type="password" 
+                value={form.password} 
+                onChange={e => setForm({...form, password: e.target.value})} 
+                required 
+              />
+            )}
+            <div className="flex gap-4 pt-4">
+              <button 
+                type="submit" 
+                className="bg-blue-500/80 hover:bg-blue-600 active:scale-95 text-white px-8 py-3 rounded-full font-semibold shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                Simpan
+              </button>
+              <button 
+                type="button" 
+                onClick={() => navigate('/admin/users')} 
+                className="border border-slate-300 text-slate-600 bg-transparent px-8 py-3 rounded-full font-semibold transition-all duration-200 hover:border-red-400 hover:text-red-500 hover:bg-red-50 active:scale-95"
+              >
+                Batal
+              </button>
             </div>
-        </form>
+          </form>
+        </div>
       </div>
-      {toast && <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full">{toast.message}</div>}
+      
+      {toast && (
+        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-6 py-3 rounded-full shadow-lg z-50">
+          {toast.message}
+        </div>
+      )}
     </div>
   );
 };
